@@ -1,0 +1,100 @@
+﻿@model Practical6.Models.Product
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Product Details</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 30px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        table {
+            width: 60%;
+            margin: auto;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: lightgray;
+            text-align: left;
+        }
+
+        td {
+            text-align: left;
+        }
+
+        .back {
+            display: block;
+            width: 150px;
+            margin: 20px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Product Details</h2>
+
+    <table>
+
+        <tr>
+            <th>Product ID</th>
+            <td>@Model.ProductId</td>
+        </tr>
+
+        <tr>
+            <th>Name</th>
+            <td>@Model.Name</td>
+        </tr>
+
+        <tr>
+            <th>Description</th>
+            <td>@Model.Description</td>
+        </tr>
+
+        <tr>
+            <th>Price</th>
+            <td>₹ @Model.Price</td>
+        </tr>
+
+        <tr>
+            <th>Category</th>
+            <td>@Model.Category</td>
+        </tr>
+
+        <tr>
+            <th>Image</th>
+            <td>@Model.Img</td>
+        </tr>
+
+    </table>
+
+    <div class="back">
+        @Html.ActionLink(
+            "Back to Products",
+            "Index",
+            "Products"
+        )
+    </div>
+
+</body>
+</html>
